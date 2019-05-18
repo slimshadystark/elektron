@@ -74,6 +74,16 @@ class FBManager {
             self.delegate?.didUploadData()
         }
     }
+    
+    func uploadNewMode(_ mode: String) {
+        self.dbReference = Database.database().reference()
+        self.dbReference.child("users").child("user1").child("currentMode").setValue(mode) { (error, dbref) in
+            if error != nil {
+                return
+            }
+            self.delegate?.didUploadData()
+        }
+    }
 //
 //    func upload(game: Game) {
 //        let dbReference = Database.database().reference().child("games").childByAutoId()

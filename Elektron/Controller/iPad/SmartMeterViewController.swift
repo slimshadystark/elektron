@@ -204,6 +204,8 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
         redModeButton.alpha = 0.5
 
         self.mode = .green
+        self.fbManager.uploadNewMode("green")
+        
     }
     
     @IBAction func normalModeButtonAction(_ sender: UIButton) {
@@ -217,6 +219,7 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
         redModeButton.alpha = 0.5
         
         self.mode = .normal
+        self.fbManager.uploadNewMode("normal")
     }
     
     @IBAction func redModeButtonAction(_ sender: UIButton) {
@@ -230,6 +233,7 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
         greenModeButton.alpha = 0.5
         
         self.mode = .red
+        self.fbManager.uploadNewMode("red")
     }
     
     func updateToken() {
