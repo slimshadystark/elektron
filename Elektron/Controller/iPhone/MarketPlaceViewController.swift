@@ -9,6 +9,14 @@
 import UIKit
 
 class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FBManagerDelegate {
+    func didReceiveTokens(_ balance: Int) {
+        
+    }
+    
+    func didReceiveKwLimit(_ kwLimit: CGFloat) {
+        
+    }
+    
     func didReceiveMode(_ mode: Mode) {
         
     }

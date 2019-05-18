@@ -9,20 +9,42 @@
 import UIKit
 
 class PlannerViewController: UIViewController, FBManagerDelegate {
+    func didReceiveTokens(_ balance: Int) {
+        
+    }
+    
+    func didReceiveKwLimit(_ kwLimit: CGFloat) {
+        if self.mode == .red {
+            self.kwLimit = "\(String(describing: Int(kwLimit)))"
+        }
+        DispatchQueue.main.async {
+            self.kwLimitLabel.text = "\(self.kwLimit)"
+        }
+    }
+    
     func didReceiveMode(_ mode: Mode) {
         var sentence = ""
+        var kwLimit = "--"
+        self.mode = mode
         switch mode {
         case .normal:
             sentence = "Use energy with care today!"
+            self.backgroundImageView.image = #imageLiteral(resourceName: "backgroundNormal")
+            self.kwLimit = "--"
         case .green:
             sentence = "Using energy today gives you more tokens!"
+            self.backgroundImageView.image = #imageLiteral(resourceName: "backligth")
+            self.kwLimit = "--"
         case .red:
             sentence = "Try to stay below the threshold!"
+            self.backgroundImageView.image = #imageLiteral(resourceName: "backgroundRed")
+            kwLimit = self.kwLimit
         default:
             sentence = "Mode not valid!"
         }
         DispatchQueue.main.async {
             self.modeLabel.text = sentence
+            self.kwLimitLabel.text = kwLimit
         }
     }
     
@@ -48,9 +70,14 @@ class PlannerViewController: UIViewController, FBManagerDelegate {
     @IBOutlet weak var kwConsumptionLabel: UILabel!
     @IBOutlet weak var tokenLabel: UILabel!
     @IBOutlet weak var modeLabel: UILabel!
+    @IBOutlet weak var kwLimitLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     // Database
     let fbManager = FBManager.shared
+    
+    var mode: Mode = .normal
+    var kwLimit = "--"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +89,7 @@ class PlannerViewController: UIViewController, FBManagerDelegate {
         super.viewDidAppear(animated)
         self.fbManager.getKwConsumption()
         self.fbManager.getMode()
+        self.fbManager.getKwLimit()
     }
     
 

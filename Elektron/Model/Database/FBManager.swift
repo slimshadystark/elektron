@@ -36,6 +36,26 @@ class FBManager {
         }
     }
     
+    func getKwLimit() {
+        self.dbReference = Database.database().reference()
+        dbReference.child("users").child("user1").observe(.value) { (snapshot) in
+            debugPrint("SNAP: \(snapshot)")
+            let kwLimit = KwLimit(snapshot: snapshot)
+            let limit = kwLimit.limit
+            self.delegate?.didReceiveKwLimit(limit!)
+        }
+    }
+    
+    func getTokens() {
+        self.dbReference = Database.database().reference()
+        dbReference.child("users").child("user1").observe(.value) { (snapshot) in
+            debugPrint("SNAP: \(snapshot)")
+            let token = Token(snapshot: snapshot)
+            let balance = token.balance
+            self.delegate?.didReceiveTokens(balance!)
+        }
+    }
+    
     func getSuppliers() {
         self.dbReference = Database.database().reference()
         dbReference.child("suppliers").observe(.value) { (snapshot) in
@@ -79,6 +99,17 @@ class FBManager {
         self.dbReference = Database.database().reference()
         self.dbReference.child("users").child("user1").child("currentMode").setValue(mode) { (error, dbref) in
             if error != nil {
+                return
+            }
+            self.delegate?.didUploadData()
+        }
+    }
+    
+    func uploadTokens(_ tokens: Int) {
+        self.dbReference = Database.database().reference()
+        self.dbReference.child("users").child("user1").child("tokensBalance").setValue(tokens) { (error, dbref) in
+            if error != nil {
+                debugPrint("ERRORE: \(error?.localizedDescription)")
                 return
             }
             self.delegate?.didUploadData()

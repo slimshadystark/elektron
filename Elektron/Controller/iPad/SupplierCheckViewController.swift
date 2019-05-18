@@ -9,6 +9,14 @@
 import UIKit
 
 class SupplierCheckViewController: UIViewController, FBManagerDelegate {
+    func didReceiveTokens(_ balance: Int) {
+        
+    }
+    
+    func didReceiveKwLimit(_ kwLimit: CGFloat) {
+        
+    }
+    
     func didReceiveMode(_ mode: Mode) {
         
     }

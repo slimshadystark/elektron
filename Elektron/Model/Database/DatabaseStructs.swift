@@ -96,3 +96,60 @@ struct CurrentMode {
     
 }
 
+struct KwLimit {
+    
+    var ref: DatabaseReference?
+    var limit: CGFloat?
+    
+    init(snapshot: DataSnapshot) {
+        ref = snapshot.ref
+        
+        if let data = snapshot.value as? [String:Any] {
+            if let limit = data["kwLimit"] as? CGFloat {
+                self.limit = limit
+            } else {
+                self.limit = 0
+            }
+        }
+        
+    }
+    
+    init(limit: CGFloat) {
+        self.limit = limit
+    }
+    
+    init() {
+        
+    }
+    
+}
+
+struct Token {
+    
+    var ref: DatabaseReference?
+    var balance: Int?
+    
+    init(snapshot: DataSnapshot) {
+        ref = snapshot.ref
+        
+        if let data = snapshot.value as? [String:Any] {
+            if let balance = data["tokensBalance"] as? Int {
+                self.balance = balance
+            } else {
+                self.balance = 0
+            }
+        }
+        
+    }
+    
+    init(balance: Int) {
+        self.balance = balance
+    }
+    
+    init() {
+        
+    }
+    
+}
+
+

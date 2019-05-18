@@ -14,4 +14,6 @@ protocol FBManagerDelegate {
     func didReceiveKW(_ kw: CGFloat)
     func didReceiveSuppliersList(_ suppliers: [Supplier])
     func didReceiveMode(_ mode: Mode)
+    func didReceiveKwLimit(_ kwLimit: CGFloat)
+    func didReceiveTokens(_ balance: Int)
 }

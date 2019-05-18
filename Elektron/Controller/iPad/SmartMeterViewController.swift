@@ -10,6 +10,14 @@ import UIKit
 import UICircularProgressRing
 
 class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierCheckProtocol {
+    func didReceiveTokens(_ balance: Int) {
+        
+    }
+    
+    func didReceiveKwLimit(_ kwLimit: CGFloat) {
+    
+    }
+    
     func didReceiveMode(_ mode: Mode) {
         
     }
@@ -27,6 +35,7 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
             self.supplierNameLabel.text = self.fbManager.supplierName
         }
         self.startTimer()
+        self.startCurrentModeTimer()
     }
     
     func didUploadData() {
@@ -50,6 +59,11 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
     // Kw variable
     var currentKwLoad: CGFloat = 8
     var totalKwLoad: CGFloat = 0
+    var kwLimit: CGFloat = 800
+    var currentModeKwConsumption: CGFloat = 8
+    var kwFactor: CGFloat = 0
+    var tokens: Int = 0
+    var redTokens: Int = 0
     
     //
     var isWashingMachineActive: Bool = false
@@ -59,10 +73,7 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
     
     // Timer
     var timer: Timer!
-    var kwFactor: CGFloat = 0
-    var tokens: Int = 0
-    var redTokens: Int = 0
-    var kwLimit: CGFloat = 800
+    var currentModeTimer: Timer!
     
     var isSupplierAssigned = false
     
@@ -71,6 +82,7 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
     @IBOutlet weak var greenModeButton: UIButton!
     @IBOutlet weak var supplierNameLabel: UILabel!
     @IBOutlet weak var totalKwConsumptionLabel: UILabel!
+    @IBOutlet weak var currentModeConsumptionLabel: UILabel!
     @IBOutlet weak var energyLoadRing: UICircularProgressRing!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,6 +206,7 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
     }
     
     @IBAction func greenModeButtonAction(_ sender: UIButton) {
+        self.endTimer()
         greenModeButton.backgroundColor = UIColor(displayP3Red: 0, green: 250/255, blue: 146/255, alpha: 1)
         greenModeButton.alpha = 1
         
@@ -206,9 +219,14 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
         self.mode = .green
         self.fbManager.uploadNewMode("green")
         
+//        self.fbManager.uploadTokens(self.tokens + Int(self.tokens*10/100))
+        
+        self.startCurrentModeTimer()
+        
     }
     
     @IBAction func normalModeButtonAction(_ sender: UIButton) {
+        self.endTimer()
         normalModeBUtton.backgroundColor = UIColor(displayP3Red: 0, green: 145/255, blue: 147/255, alpha: 1)
         greenModeButton.alpha = 1
         
@@ -220,9 +238,15 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
         
         self.mode = .normal
         self.fbManager.uploadNewMode("normal")
+        
+//        self.fbManager.uploadTokens(self.tokens)
+        
+        self.startCurrentModeTimer()
+
     }
     
     @IBAction func redModeButtonAction(_ sender: UIButton) {
+        self.endTimer()
         redModeButton.backgroundColor = UIColor(displayP3Red: 216/255, green: 38/255, blue: 0, alpha: 1)
         redModeButton.alpha = 1
         
@@ -234,6 +258,10 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
         
         self.mode = .red
         self.fbManager.uploadNewMode("red")
+        
+//        self.fbManager.uploadTokens(self.tokens)
+        
+        self.startCurrentModeTimer()
     }
     
     func updateToken() {
@@ -251,7 +279,7 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
     
     func checkKwLimit() {
         if self.mode != .red {
-            if self.totalKwLoad > self.kwLimit {
+            if self.currentKwLoad > self.kwLimit {
                 self.redTokens = 0
             } else {
                 self.tokens += self.redTokens
@@ -265,6 +293,26 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
         timer.fire()
     }
     
+    func startCurrentModeTimer() {
+        self.currentModeKwConsumption = 0
+        self.currentModeTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateSmartMeterCurrentMode), userInfo: nil, repeats: true)
+        timer.fire()
+    }
+    
+    func endTimer() {
+        self.currentModeTimer.invalidate()
+    }
+    
+    @objc func updateSmartMeterCurrentMode() {
+        updateToken()
+        self.currentModeKwConsumption += currentKwLoad
+        self.fbManager.uploadTokens(self.tokens)
+//        self.fbManager.uploadKwData(self.totalKwLoad+self.kwFactor)
+        DispatchQueue.main.async {
+            self.currentModeConsumptionLabel.text = "\(Int(self.currentModeKwConsumption+self.kwFactor)) Kw"
+        }
+    }
+    
     @objc func updateSmartMeter() {
         updateToken()
         self.kwFactor += CGFloat.random(in: 1...6).rounded(.towardZero)
@@ -272,6 +320,7 @@ class SmartMeterViewController: UIViewController, FBManagerDelegate, SupplierChe
         self.fbManager.uploadKwData(self.totalKwLoad+self.kwFactor)
         DispatchQueue.main.async {
             self.totalKwConsumptionLabel.text = "\(Int(self.totalKwLoad+self.kwFactor)) Kw"
+//            self.currentModeConsumptionLabel.text = "\(Int(self.totalKwLoad+self.kwFactor)) Kw"
         }
     }
     

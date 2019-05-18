@@ -18,6 +18,7 @@
 		53AB6BFF228F796D006CE5F8 /* FBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AB6BFE228F796D006CE5F8 /* FBManager.swift */; };
 		53AB6C01228F79D7006CE5F8 /* FBManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AB6C00228F79D7006CE5F8 /* FBManagerDelegate.swift */; };
 		53AB6C03228F814A006CE5F8 /* SmartMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AB6C02228F814A006CE5F8 /* SmartMeter.storyboard */; };
+		53BA00D82290488500EA1B9F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA00D72290488500EA1B9F /* AccountViewController.swift */; };
 		53F92197228FB52900C09B0A /* DatabaseStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F92196228FB52900C09B0A /* DatabaseStructs.swift */; };
 		53F9219A228FB9A200C09B0A /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F92199228FB9A200C09B0A /* DateManager.swift */; };
 		53F9219C228FC22000C09B0A /* SupplierCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F9219B228FC22000C09B0A /* SupplierCheckViewController.swift */; };
@@ -40,6 +41,7 @@
 		53AB6BFE228F796D006CE5F8 /* FBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBManager.swift; sourceTree = "<group>"; };
 		53AB6C00228F79D7006CE5F8 /* FBManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBManagerDelegate.swift; sourceTree = "<group>"; };
 		53AB6C02228F814A006CE5F8 /* SmartMeter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SmartMeter.storyboard; sourceTree = "<group>"; };
+		53BA00D72290488500EA1B9F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		53F92196228FB52900C09B0A /* DatabaseStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseStructs.swift; sourceTree = "<group>"; };
 		53F92199228FB9A200C09B0A /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		53F9219B228FC22000C09B0A /* SupplierCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierCheckViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				53F9219F228FCE3B00C09B0A /* MarketPlaceViewController.swift */,
 				53A1CA1C228FE0DD0071B42E /* OfferDetailsViewController.swift */,
 				53A1CA1E228FE39A0071B42E /* PlannerViewController.swift */,
+				53BA00D72290488500EA1B9F /* AccountViewController.swift */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				53AB6C01228F79D7006CE5F8 /* FBManagerDelegate.swift in Sources */,
 				53F9219A228FB9A200C09B0A /* DateManager.swift in Sources */,
+				53BA00D82290488500EA1B9F /* AccountViewController.swift in Sources */,
 				53F921A0228FCE3B00C09B0A /* MarketPlaceViewController.swift in Sources */,
 				53F921A2228FD6C400C09B0A /* SupplierTableViewCell.swift in Sources */,
 				53A1CA1D228FE0DD0071B42E /* OfferDetailsViewController.swift in Sources */,
