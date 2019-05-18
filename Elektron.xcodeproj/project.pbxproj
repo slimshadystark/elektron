@@ -8,23 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		5356D5BC228F6F5300F90B03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356D5BB228F6F5300F90B03 /* AppDelegate.swift */; };
-		5356D5BE228F6F5300F90B03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356D5BD228F6F5300F90B03 /* ViewController.swift */; };
+		5356D5BE228F6F5300F90B03 /* SmartMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356D5BD228F6F5300F90B03 /* SmartMeterViewController.swift */; };
 		5356D5C1228F6F5300F90B03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5356D5BF228F6F5300F90B03 /* Main.storyboard */; };
 		5356D5C3228F6F5400F90B03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5356D5C2228F6F5400F90B03 /* Assets.xcassets */; };
 		5356D5C6228F6F5400F90B03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5356D5C4228F6F5400F90B03 /* LaunchScreen.storyboard */; };
 		5356D5D5228F703000F90B03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5356D5D4228F703000F90B03 /* GoogleService-Info.plist */; };
+		53A1CA1D228FE0DD0071B42E /* OfferDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1CA1C228FE0DD0071B42E /* OfferDetailsViewController.swift */; };
+		53A1CA1F228FE39A0071B42E /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1CA1E228FE39A0071B42E /* PlannerViewController.swift */; };
+		53AB6BFF228F796D006CE5F8 /* FBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AB6BFE228F796D006CE5F8 /* FBManager.swift */; };
+		53AB6C01228F79D7006CE5F8 /* FBManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AB6C00228F79D7006CE5F8 /* FBManagerDelegate.swift */; };
+		53AB6C03228F814A006CE5F8 /* SmartMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AB6C02228F814A006CE5F8 /* SmartMeter.storyboard */; };
+		53F92197228FB52900C09B0A /* DatabaseStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F92196228FB52900C09B0A /* DatabaseStructs.swift */; };
+		53F9219A228FB9A200C09B0A /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F92199228FB9A200C09B0A /* DateManager.swift */; };
+		53F9219C228FC22000C09B0A /* SupplierCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F9219B228FC22000C09B0A /* SupplierCheckViewController.swift */; };
+		53F921A0228FCE3B00C09B0A /* MarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F9219F228FCE3B00C09B0A /* MarketPlaceViewController.swift */; };
+		53F921A2228FD6C400C09B0A /* SupplierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F921A1228FD6C400C09B0A /* SupplierTableViewCell.swift */; };
 		A226838970CF5A2B83357BDF /* Pods_Elektron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4ACE9F03FACDD8D12A9D96 /* Pods_Elektron.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5356D5B8228F6F5300F90B03 /* Elektron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elektron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5356D5BB228F6F5300F90B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5356D5BD228F6F5300F90B03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5356D5BD228F6F5300F90B03 /* SmartMeterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartMeterViewController.swift; sourceTree = "<group>"; };
 		5356D5C0228F6F5300F90B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5356D5C2228F6F5400F90B03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5356D5C5228F6F5400F90B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5356D5C7228F6F5400F90B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5356D5D4228F703000F90B03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53A1CA1C228FE0DD0071B42E /* OfferDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsViewController.swift; sourceTree = "<group>"; };
+		53A1CA1E228FE39A0071B42E /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
+		53AB6BFE228F796D006CE5F8 /* FBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBManager.swift; sourceTree = "<group>"; };
+		53AB6C00228F79D7006CE5F8 /* FBManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBManagerDelegate.swift; sourceTree = "<group>"; };
+		53AB6C02228F814A006CE5F8 /* SmartMeter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SmartMeter.storyboard; sourceTree = "<group>"; };
+		53F92196228FB52900C09B0A /* DatabaseStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseStructs.swift; sourceTree = "<group>"; };
+		53F92199228FB9A200C09B0A /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		53F9219B228FC22000C09B0A /* SupplierCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierCheckViewController.swift; sourceTree = "<group>"; };
+		53F9219F228FCE3B00C09B0A /* MarketPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceViewController.swift; sourceTree = "<group>"; };
+		53F921A1228FD6C400C09B0A /* SupplierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierTableViewCell.swift; sourceTree = "<group>"; };
 		5E4ACE9F03FACDD8D12A9D96 /* Pods_Elektron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elektron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FA641D17DF22AE877A4580 /* Pods-Elektron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elektron.release.xcconfig"; path = "Pods/Target Support Files/Pods-Elektron/Pods-Elektron.release.xcconfig"; sourceTree = "<group>"; };
 		FDC21E848B46E46E308E5507 /* Pods-Elektron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elektron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Elektron/Pods-Elektron.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,8 +97,6 @@
 				5356D5CE228F6F6200F90B03 /* View */,
 				5356D5CD228F6F5D00F90B03 /* Model */,
 				5356D5BB228F6F5300F90B03 /* AppDelegate.swift */,
-				5356D5BD228F6F5300F90B03 /* ViewController.swift */,
-				5356D5BF228F6F5300F90B03 /* Main.storyboard */,
 				5356D5C2228F6F5400F90B03 /* Assets.xcassets */,
 				5356D5C4228F6F5400F90B03 /* LaunchScreen.storyboard */,
 				5356D5D4228F703000F90B03 /* GoogleService-Info.plist */,
@@ -91,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				5356D5D0228F6F6D00F90B03 /* Database */,
+				53F92199228FB9A200C09B0A /* DateManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +117,9 @@
 		5356D5CE228F6F6200F90B03 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53F9219D228FCA7100C09B0A /* iPad */,
+				5356D5BF228F6F5300F90B03 /* Main.storyboard */,
+				53F921A1228FD6C400C09B0A /* SupplierTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +127,8 @@
 		5356D5CF228F6F6700F90B03 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				53A1CA1B228FE0BB0071B42E /* iPhone */,
+				53F9219E228FCE2500C09B0A /* iPad */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +136,8 @@
 		5356D5D0228F6F6D00F90B03 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				53AB6BFE228F796D006CE5F8 /* FBManager.swift */,
+				53F92196228FB52900C09B0A /* DatabaseStructs.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -135,8 +161,36 @@
 		5356D5D3228F6F8100F90B03 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				53AB6C00228F79D7006CE5F8 /* FBManagerDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		53A1CA1B228FE0BB0071B42E /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				53F9219F228FCE3B00C09B0A /* MarketPlaceViewController.swift */,
+				53A1CA1C228FE0DD0071B42E /* OfferDetailsViewController.swift */,
+				53A1CA1E228FE39A0071B42E /* PlannerViewController.swift */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		53F9219D228FCA7100C09B0A /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				53AB6C02228F814A006CE5F8 /* SmartMeter.storyboard */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		53F9219E228FCE2500C09B0A /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				5356D5BD228F6F5300F90B03 /* SmartMeterViewController.swift */,
+				53F9219B228FC22000C09B0A /* SupplierCheckViewController.swift */,
+			);
+			path = iPad;
 			sourceTree = "<group>";
 		};
 		9C348A1EECA04B48F8CAEACC /* Frameworks */ = {
@@ -207,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53AB6C03228F814A006CE5F8 /* SmartMeter.storyboard in Resources */,
 				5356D5C6228F6F5400F90B03 /* LaunchScreen.storyboard in Resources */,
 				5356D5D5228F703000F90B03 /* GoogleService-Info.plist in Resources */,
 				5356D5C3228F6F5400F90B03 /* Assets.xcassets in Resources */,
@@ -227,6 +282,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Elektron/Pods-Elektron-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -234,6 +291,8 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +329,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5356D5BE228F6F5300F90B03 /* ViewController.swift in Sources */,
+				53AB6C01228F79D7006CE5F8 /* FBManagerDelegate.swift in Sources */,
+				53F9219A228FB9A200C09B0A /* DateManager.swift in Sources */,
+				53F921A0228FCE3B00C09B0A /* MarketPlaceViewController.swift in Sources */,
+				53F921A2228FD6C400C09B0A /* SupplierTableViewCell.swift in Sources */,
+				53A1CA1D228FE0DD0071B42E /* OfferDetailsViewController.swift in Sources */,
+				5356D5BE228F6F5300F90B03 /* SmartMeterViewController.swift in Sources */,
+				53A1CA1F228FE39A0071B42E /* PlannerViewController.swift in Sources */,
+				53AB6BFF228F796D006CE5F8 /* FBManager.swift in Sources */,
+				53F92197228FB52900C09B0A /* DatabaseStructs.swift in Sources */,
+				53F9219C228FC22000C09B0A /* SupplierCheckViewController.swift in Sources */,
 				5356D5BC228F6F5300F90B03 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M678CAULCR;
 				INFOPLIST_FILE = Elektron/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M678CAULCR;
 				INFOPLIST_FILE = Elektron/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

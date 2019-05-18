@@ -18,6 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            let sb = UIStoryboard(name: "SmartMeter", bundle: Bundle.main)
+            let vc = sb.instantiateInitialViewController()
+            self.window?.rootViewController = vc
+        case .phone:
+            let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = sb.instantiateInitialViewController()
+            self.window?.rootViewController = vc
+        default:
+            break
+        }
         return true
     }
 
